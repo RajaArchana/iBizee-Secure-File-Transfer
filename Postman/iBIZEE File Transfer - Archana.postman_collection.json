@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "49d44ec9-2a70-4d03-be8e-48e57170b08a",
+		"name": "iBIZEE File Transfer - Archana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6999590"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "User Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"John doe\",\r\n    \"userEmail\": \"test@gmail.com\",\r\n    \"departmentId\": 1,\r\n    \"userPassword\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userEmail\": \"test@gmail.com\",\r\n    \"userPassword\": \"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File Transfer",
+			"item": [
+				{
+					"name": "New File Upload",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/Chamika/Downloads/File Send.zip"
+								},
+								{
+									"key": "fileDescription",
+									"value": "test file",
+									"type": "text"
+								},
+								{
+									"key": "departmentId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "filePassword",
+									"value": "testpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/file/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"file",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "File Details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fileDescription\": \"test file\",\r\n    \"departmentId\": 1,\r\n    \"filePassword\": \"test12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/file/details",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"file",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Email Send",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"to\": \"progammasl@gmail.com\",\r\n    \"subject\": \"New file uploaded (do-not-reply)\",\r\n    \"body\": \"Hello\\nNow you can find the uploaded file using the below link\\nPlease not that this is a auto generated email. Therefore, please do not reply\\n\\nThank you\\niBIZEE File Transfer Service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/email/send",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"email",
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Data Encryption",
+			"item": [
+				{
+					"name": "Generate Keys",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/data/key",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"data",
+								"key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Encrypt Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fileNames\": \"file01, file02\",\r\n    \"timeStamp\": \"2024-04-18T08:55:56\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/data/enc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"data",
+								"enc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Decrypt Data",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "ArPh040SEgIja2v6AtGEhkeQgNSQgMdrpKBAl35BLkuqTFJZr+qkbdxmKcyMjIQlaJ+WsuO25QPsA8vk1UQuHP8nFaIIwuXM0lSaXF9SQqp0g6Tg4JWIN9YhsWqnVdS2rUxq9w7Dq0LoFXaojdqaQAFE2n23lRh9CW7XK5lk64A=",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/data/dec",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"data",
+								"dec"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

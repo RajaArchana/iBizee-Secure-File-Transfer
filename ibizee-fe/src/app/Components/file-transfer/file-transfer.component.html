@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+
+          <div *ngIf="this.alertStatus" [ngClass]="this.alertClass" style="margin: 2%;" role="alert">
+            {{this.alertText}}
+          </div>
+
+            <div class="card-body">
+                <form class="row g-3" (change)="OnChange()">
+                    <legend style="color: green;"><b>File Transfer</b></legend>
+        
+                    <div class="col-md-12">
+                      <label for="inputPassword4" class="form-label">File Description</label>
+                      <input type="email" class="form-control" id="inputPassword4" name="fileDescription" [(ngModel)]="this.uploadRequest.fileDescription">
+                    </div>
+
+                    <div class="col-12">
+                      <label for="departmentId" class="form-label">Select the Department</label>
+                        <select class="form-select" aria-label="Default select example" name="departmentId" [(ngModel)]="this.uploadRequest.departmentId">
+                            <option value="1">Development</option>
+                            <option value="2">Sales & Marketing</option>
+                            <option value="3">Operation and Logistics</option>
+                          </select>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="formFile" class="form-label">Upload the file</label>
+                        <input class="form-control" type="file" id="formFile" (change)="onFileChange($event)">
+                      </div>
+                    
+                    <div class="col-10">
+                      <label for="inputAddress2" class="form-label">Password</label>
+                      <input type="text" class="form-control" id="inputAddress2" name="filePassword" [(ngModel)]="this.uploadRequest.filePassword">
+                      <small id="emailHelp" class="form-text text-muted">This is a auto generated password. But, You can add your own password</small>
+                    </div>
+                    
+                    <div class="col-3">
+                      <button type="submit" class="btn btn-primary" (click)="uploadFileDetails()">Upload</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="col">
+        
+      </div>
+    </div>
+  </div>
+
+
+

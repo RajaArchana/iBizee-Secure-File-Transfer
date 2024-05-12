@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+
+          <div *ngIf="this.alertStatus" [ngClass]="this.alertClass" style="margin: 2%;" role="alert">
+            {{this.alertText}}
+          </div>
+
+            <div class="card-body">
+                <form class="row g-3">
+                    <legend style="color: green;"><b>Login</b></legend>
+        
+                    <div class="col-md-12">
+                      <label for="inputPassword4" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="inputPassword4" name="userEmail" [(ngModel)]="this.login.userEmail" (input)="registerOnChange()">
+                    </div>
+                    
+                    <div class="col-12">
+                      <label for="inputAddress2" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="inputAddress2" name="userPassword" [(ngModel)]="this.login.userPassword"  (input)="registerOnChange()">
+                    </div>
+                    
+                    <div class="col-12">
+                      <button type="submit" class="btn btn-primary" (click)="userLogin()">Login</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="col">
+        
+      </div>
+    </div>
+  </div>
+
+
+

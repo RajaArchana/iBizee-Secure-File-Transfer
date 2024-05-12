@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+
+      <div class="col-8">
+        <div class="card">
+
+          <div *ngIf="this.alertStatus" [ngClass]="this.alertClass" style="margin: 2%;" role="alert">
+            {{this.alertText}}
+          </div>
+
+            <div class="card-body">
+                <form class="row g-3">
+                    <legend style="color: green;"><b>File Download</b></legend>
+        
+                    <table #reportTable class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">Description</th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let data of this.download_table">
+                          <td>{{data[0]}}</td>
+                          <td *ngIf="link_visibility"><a href={{data[1]}}>Click here to download</a></td>
+                          <td><input type="password" class="form-control" id="inputAddress2" placeholder="Enter password" name="user_password" [(ngModel)]="data[4]" (input)="registerOnChange()"></td>
+                          <td><button type="submit" class="btn btn-success" (click)="clickOnReveal(data)">Reveal Link</button></td>
+                        </tr>
+                      </tbody>
+                      
+                    </table>
+                  </form>
+            </div>
+        </div>
+        
+      </div>
+
+      <div class="col">
+        
+      </div>
+    </div>
+  </div>
+
+
+
